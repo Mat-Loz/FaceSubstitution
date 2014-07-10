@@ -98,7 +98,7 @@ void testApp::keyPressed(int key){
 		currentFace--;
 		break;
 	}
-	currentFace = ofClamp(currentFace,0,faces.size());
+	currentFace = ofClamp(currentFace,0,faces.size()-1);
 	if(faces.size()!=0){
 		loadFace(faces.getPath(currentFace));
 	}
