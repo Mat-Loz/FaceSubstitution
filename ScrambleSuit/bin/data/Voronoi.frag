@@ -1,3 +1,4 @@
+#extension GL_ARB_texture_rectangle : enable
 uniform sampler2DRect points;
 uniform int count;
 const float zoom = 2.;

@@ -1,3 +1,4 @@
+#extension GL_ARB_texture_rectangle : enable
 uniform sampler2DRect tex;
 uniform vec2 direction;
 uniform int k;
