@@ -1,5 +1,8 @@
 #include "testApp.h"
 
+using namespace ofxCv;
+using namespace cv;
+
 ofMesh texturedRectMesh;
 void texturedRect(float width, float height) {
 	if(texturedRectMesh.getNumVertices() == 0) {
@@ -107,6 +110,8 @@ void testApp::normalizeImage(ofImage& img, ofImage& normalized) {
 }
 
 void testApp::setup() {
+	normalizedMeshScale = 1400;
+
 	ofSetVerticalSync(true);
 	
 	maskBlurShader.load("", "MaskBlur.frag");
@@ -137,9 +142,8 @@ void testApp::setup() {
 	halfAlphaBlur.allocate(settings);
 	final.allocate(settings);
 	
-	faceDirectory.listDir("faces");
+	int n = faceDirectory.listDir("faces");
 	faceDirectory.sort();
-	int n = 5;
 	faces.resize(n);
 	for(int i = 0; i < n; i++) {
 		ofImage curFace;
